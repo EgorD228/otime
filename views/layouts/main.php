@@ -17,10 +17,6 @@ AppAsset::register($this);
     <!DOCTYPE html>
     <html lang="<?= Yii::$app->language ?>" style="overflow-x: hidden;">
     <head>
-        <meta charset="<?= Yii::$app->charset ?>">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
         <?php //$this->registerCsrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
         <link rel="shortcut icon" href="../web/images/favicon.ico" type="image/ico">
@@ -28,6 +24,10 @@ AppAsset::register($this);
     </head><!--/head-->
     <body>
     <?php $this->beginBody() ?>
+    <?php
+    if (class_exists('yii\debug\Module')) {
+        $this->off(\yii\web\View::EVENT_END_BODY, [\yii\debug\Module::getInstance(), 'renderToolbar']);
+    } ?>
         <div class="header-bottom"><!--header-bottom-->
         <div class="container">
             <div class="row">
@@ -41,6 +41,14 @@ AppAsset::register($this);
                         </ul>
                     </div>
                 </div>
+                    <form action="/site/index">
+                        <div class="search1">
+                            <div class="search_box">
+                                <input type='text' id='a' name='search' placeholder='Поиск'>
+                            </div>
+                        <input type='submit' class='btnsub btn btn-primary'  type="button" value='Поиск' id='b'>
+                    </div>
+                </form>
             </div>
         </div>
     </div><!--/header-bottom-->

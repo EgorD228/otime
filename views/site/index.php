@@ -23,3 +23,11 @@ use Yii;
 			</div>
 		</div>
 	</section>
+<div class="pagenavig">
+    <?php
+        use yii\widgets\LinkPager;
+        echo LinkPager::widget([
+        'pagination' => $pages,
+        ]);
+    ?>
+</div>

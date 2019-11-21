@@ -11,8 +11,9 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\tovari;
+use app\models\search;
 use app\models\User;
-use app\models\sendemail;
+use yii\data\Pagination;
 use yii\widgets\LinkPage;
 
 
@@ -61,10 +62,22 @@ class SiteController extends Controller
         ];
     }
 
-    public function actionIndex()
-    {
-            $model = tovari::find()->all();
-        return $this->render('index',['model'=>$model]);
+    public function actionIndex($search=null)
+    {       if (isset($_GET['search'])) {
+                $query = tovari::find()->where(['like','name',$_GET['search']]);
+                $pages = new Pagination(['totalCount' =>count($query->all()), 'pageSize' => 5]);
+                $model = $query->offset($pages->offset)
+                    ->limit($pages->limit)
+                    ->all();
+            }else{
+                $query = tovari::find();
+                $model = tovari::find()->all();
+                $pages = new Pagination(['totalCount' =>count($query->all()), 'pageSize' => 5]);
+                $model = $query->offset($pages->offset)
+                    ->limit($pages->limit)
+                    ->all();
+            }
+        return $this->render('index',['model'=>$model,'pages'=>$pages,'query'=>$query,'search'=>$search]);
     }
 
 
