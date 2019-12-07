@@ -20,7 +20,6 @@ use yii\helpers\ArrayHelper;
 		?>
 			<?= $form->field($model,'name')->textInput(['class'=>'bookadd','placeholder' => "Название"])?>
 			<?= $form->field($model,'opisanie')->textarea(['class'=>'bookaddop','rows'=>'5','placeholder' => "Подробно"])?>
-			
 			<?= Html::submitButton('Добавить новость',['class'=>'btnsub'])?>
 		<?php
 			ActiveForm::end();
