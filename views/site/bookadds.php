@@ -4,9 +4,9 @@ use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 ?>	
-<?php $this->title = "Добавление новости"; ?>
+<?php $this->title = "Добавление новостей и мероприятий"; ?>
 	<div class="knig">
-		<h1>Добавить новость</h1><br>
+		<h1>Добавить новость или мероприятие</h1><br>
 	</div>
 	<div class="panel1">
 		<?php
@@ -18,9 +18,9 @@ use yii\helpers\ArrayHelper;
 				"options"=>["enctype"=>"multipart/form-data"],
 				]);
 		?>
-			<?= $form->field($model,'name')->textInput(['class'=>'bookadd','placeholder' => "Название"])?>
+			<?= $form->field($model,'name')->textInput(['class'=>'bookadd','placeholder' => "Название, в случае добавления мероприятия укажите дату"])?>
 			<?= $form->field($model,'opisanie')->textarea(['class'=>'bookaddop','rows'=>'5','placeholder' => "Подробно"])?>
-			<?= Html::submitButton('Добавить новость',['class'=>'btnsub'])?>
+			<?= Html::submitButton('Добавить',['class'=>'btnsub'])?>
 		<?php
 			ActiveForm::end();
 		?>

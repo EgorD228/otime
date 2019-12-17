@@ -5,11 +5,11 @@ use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use Yii;
 ?>  
-<?php $this->title = "Товары"; ?>
+<?php $this->title = "Новости и мероприятия"; ?>
 <section>
 	<div class="container">
                 	<?php 
-                        echo "<h1 style='font-size: 34px;font-weight: 700;margin: 0 auto 30px;text-align: center;text-transform: uppercase;position: relative;z-index: 3;'>Новости</h1>";
+                        echo "<h1 style='font-size: 34px;font-weight: 700;margin: 0 auto 30px;text-align: center;text-transform: uppercase;position: relative;z-index: 3;'>Новости и мероприятия</h1>";
                         foreach ($model as $yel) {
                             echo "<div class='tovar'>";       			
                     			echo '<h2>'.$yel->name.'</h2>';

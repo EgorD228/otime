@@ -34,9 +34,9 @@ AppAsset::register($this);
                 <div class="col-sm-9">
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="../site/index" class="active">Новости</a></li>
+                            <li><a href="../site/index" class="active">Главная</a></li>
 
-                            <li><a href="../site/bookadds">Загрузка новости</a></li>
+                            <li><a href="../site/bookadds">Загрузить</a></li>
 
                         </ul>
                     </div>

@@ -2641,11 +2641,17 @@ height: 50px;
 
 .panel1{
   top: 100px;
-  width: 200px;
-  height: auto;
+  width: 300px;
+  height: 400px;
   position: relative;
   margin: 0 auto;
   right: 75px;
+}
+
+.control-label{
+  position: relative;
+  float: left;
+  padding-top: 30px;
 }
 
 .mag h1{
@@ -2669,17 +2675,17 @@ left: 392px;
 .bookadd {
   float: left;
   border: 1px solid black;
-  padding: 10px; 
+  padding: 10px;
+  width: 500px;
 }
+
+
 
 .bookaddop {
   border: 1px solid black;
-  float: left; 
+  float: left;
+  width: 500px;
   background-color: white;
-}
-
-.btnsub {
-  top: 10px;
 }
 
 .bookadds{
@@ -2709,8 +2715,8 @@ a:hover{
 
 .btnsub{
   position: relative;
-  top:10px;
-  left:40px;
+  top:30px;
+  float: left;
 }
 
 .btnmag{
