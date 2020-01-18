@@ -24,35 +24,20 @@ AppAsset::register($this);
     </head><!--/head-->
     <body>
     <?php $this->beginBody() ?>
-    <?php
-    if (class_exists('yii\debug\Module')) {
-        $this->off(\yii\web\View::EVENT_END_BODY, [\yii\debug\Module::getInstance(), 'renderToolbar']);
-    } ?>
-        <div class="header-bottom"><!--header-bottom-->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-9">
-                    <div class="mainmenu pull-left">
-                        <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="../site/index" class="active">Главная</a></li>
-
-                            <li><a href="../site/bookadds">Загрузить</a></li>
-
-                        </ul>
-                    </div>
-                </div>
-                    <form action="/site/index">
-                        <div class="search1">
-                            <div class="search_box">
-                                <input type='text' id='a' name='search' placeholder='Поиск'>
-                            </div>
-                        <input type='submit' class='btnsub btn btn-primary'  type="button" value='Поиск' id='b'>
-                    </div>
-                </form>
+    <div class="head">
+        <div class="menu">
+            <img src="..\..\web\img\logo.gif" id="a">
+            <p id="d">Онлайн регистрация на соревнования</p>
+            <div id="b">
+                <a href="/site/index">Календарь</a>
+                <a href="/site/result">Результаты</a>
+                <a href="/site/rating">Рейтинги</a>
+                <a href="/site/about">Контакты</a>
+                <a href="https://vk.com/otimeru">Новости</a>
             </div>
+            <img src="..\..\web\img\otime.gif" id="c">
         </div>
-    </div><!--/header-bottom-->
-    </header><!--/header-->
+    </div>
 
 
     <?= $content ?>

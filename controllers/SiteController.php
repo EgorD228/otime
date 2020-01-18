@@ -62,40 +62,23 @@ class SiteController extends Controller
         ];
     }
 
-    public function actionIndex($search=null)
-    {       if (isset($_GET['search'])) {
-                $query = tovari::find()->where(['like','name',$_GET['search']]);
-                $pages = new Pagination(['totalCount' =>count($query->all()), 'pageSize' => 5]);
-                $model = $query->offset($pages->offset)
-                    ->limit($pages->limit)
-                    ->all();
-            }else{
-                $query = tovari::find();
-                $model = tovari::find()->all();
-                $pages = new Pagination(['totalCount' =>count($query->all()), 'pageSize' => 5]);
-                $model = $query->offset($pages->offset)
-                    ->limit($pages->limit)
-                    ->all();
-            }
-        return $this->render('index',['model'=>$model,'pages'=>$pages,'query'=>$query,'search'=>$search]);
-    }
-
-
-    public function actionAddbook()
+    public function actionIndex()
     {
-        $model=new tovari();
-        if($model->load(Yii::$app->request->post())&& $model->save())
-        {   
-            $alert='Добавлено';
-            return $this->render('bookadds',['model'=>$model,'alert'=>$alert]);
-        }
+        return $this->render('index');
     }
 
-    
+    public function actionResult()
+    {
+        return $this->render('result');
+    }
 
-    public function actionBookadds(){
-        $model=new tovari();
+    public function actionRating()
+    {
+        return $this->render('rating');
+    }
 
-        return $this->render('bookadds',compact('model'));
-    }    
+    public function actionAbout()
+    {
+        return $this->render('about');
+    }
 }
