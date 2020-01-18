@@ -81,4 +81,9 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
+    public function actionCalculator()
+    {
+        return $this->render('calculator');
+    }
 }

@@ -121,28 +121,26 @@ a.desc:after {
   width: 100%;
   height: 82px;
   background-color: #99cccc;
+  display: flex;
 }
 
 .menu{
-  width: 70%;
   height: 82px;
-  position: relative;
   left: 30%;
   display: grid;
-  grid-template-columns: 100px 500px 100px;
+  grid-template-columns: 100px 600px 100px;
   grid-template-rows: 40px 40px;
   align-items: center;
-}
-
-.menu img{
-  width: auto;
-  height: 60px;
+  margin: 0 auto;
 }
 
 .menu #a{
   grid-column: 1/2;
   grid-row: 1/3;
   justify-self: end;
+  height: 60px;
+  width: auto;
+  margin-top: 40px;
 }
 
 .menu #b{
@@ -155,6 +153,8 @@ a.desc:after {
   grid-column: 3/4;
   grid-row: 1/3;
   justify-self: start;
+  width: 150px;
+  margin-top: 65px;
 }
 
 .menu #b a{
@@ -181,4 +181,19 @@ a.desc:after {
 .menu p{
   font-size: 8pt;
   font-weight: bold;
+}
+
+.foot{
+  width: 100%;
+  height: 40px;
+  background-color: #99cccc;
+}
+
+.foot p{
+  width: 700px;
+  margin: 0 auto;
+}
+
+.content h1{
+
 }

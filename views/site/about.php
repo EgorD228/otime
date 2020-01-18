@@ -1,4 +1,4 @@
 <?php
-$this->title = 'contact';
+$this->title = 'Контакты';
 ?>
 
